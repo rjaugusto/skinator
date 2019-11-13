@@ -1,4 +1,4 @@
-package com.rafael.skinator.domain;
+package com.rafael.skinator.skin.domain;
 
 public enum Exterior {
 	

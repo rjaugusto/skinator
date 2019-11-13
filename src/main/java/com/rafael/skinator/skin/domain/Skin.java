@@ -1,4 +1,4 @@
-package com.rafael.skinator.domain;
+package com.rafael.skinator.skin.domain;
 
 import java.io.Serializable;
 
@@ -17,7 +17,7 @@ public class Skin implements Serializable {
 	private Integer id;
 	private String name;
 	private Exterior exterior;
-	private Type type;
+	private Type tipo;
 	private StatTrack statTrack;
 	private Double price;
 	private Double exteriorfloat;
@@ -25,13 +25,13 @@ public class Skin implements Serializable {
 	public Skin() {
 	}
 
-	public Skin(Integer id, String name, Exterior exterior, Type type, StatTrack statTrack, Double price,
+	public Skin(Integer id, String name, Exterior exterior, Type tipo, StatTrack statTrack, Double price,
 			Double exteriorfloat) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.exterior = exterior;
-		this.type = type;
+		this.tipo = tipo;
 		this.statTrack = statTrack;
 		this.price = price;
 		this.exteriorfloat = exteriorfloat;
@@ -61,12 +61,12 @@ public class Skin implements Serializable {
 		this.exterior = exterior;
 	}
 
-	public Type getType() {
-		return type;
+	public Type getTipo() {
+		return tipo;
 	}
 
-	public void setType(Type type) {
-		this.type = type;
+	public void setTipo(Type tipo) {
+		this.tipo = tipo;
 	}
 
 	public StatTrack getStatTrack() {

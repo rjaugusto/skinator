@@ -1,4 +1,4 @@
-package com.rafael.skinator.domain;
+package com.rafael.skinator.skin.domain;
 
 public enum Type {
 	KEY,GLOVE,KNIVE,ASSAUT_RIFFLE,SMG,MUSIC_KIT,PIN,GRAFFITI,PISTOL,SNIPER_RIFLE,SHOTGUN,MACHINEGUN,STIKER,CASE
