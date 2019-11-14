@@ -1,6 +1,7 @@
 package com.rafael.skinator.skin.domain;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,12 +22,13 @@ public class Skin implements Serializable {
 	private StatTrack statTrack;
 	private Double price;
 	private Double exteriorfloat;
+	private Set<Stiker> stikers;
 	
 	public Skin() {
 	}
 
 	public Skin(Integer id, String name, Exterior exterior, Type tipo, StatTrack statTrack, Double price,
-			Double exteriorfloat) {
+			Double exteriorfloat,Set<Stiker> stikers) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -35,6 +37,7 @@ public class Skin implements Serializable {
 		this.statTrack = statTrack;
 		this.price = price;
 		this.exteriorfloat = exteriorfloat;
+		this.stikers = stikers;
 	}
 
 	public Integer getId() {
@@ -91,6 +94,14 @@ public class Skin implements Serializable {
 
 	public void setExteriorfloat(Double exteriorfloat) {
 		this.exteriorfloat = exteriorfloat;
+	}
+	
+	public Set<Stiker> getStikers() {
+		return stikers;
+	}
+
+	public void setStikers(Set<Stiker> stikers) {
+		this.stikers = stikers;
 	}
 
 	@Override
