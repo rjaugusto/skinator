@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.rafael.skinator.skin.domain.Skin;
 import com.rafael.skinator.skin.repositores.SkinRepository;
+import com.rafael.skinator.skin.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class SkinService {
@@ -16,7 +17,14 @@ public class SkinService {
 	private SkinRepository skinRepository;
 	
 	public Optional<Skin> find(Integer id) {
-		return skinRepository.findById(id);
+		
+		Optional<Skin> skin = skinRepository.findById(id);
+		
+		if(!skin.isPresent()) {
+			throw new ObjectNotFoundException("Skin com o ID " + id + " Não foi encontrada" );
+		}
+		
+		return skin;
 	}
 	
 	public List<Skin> list(){

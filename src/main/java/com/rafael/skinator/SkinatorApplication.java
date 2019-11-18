@@ -30,8 +30,8 @@ public class SkinatorApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Skin skin1 = new Skin(null, "Ak 47 grade de Safari", BATTLE_SCARRED, ASSAUT_RIFFLE, S, 10.60, 0.01, null);
-		Skin skin2 = new Skin(null, "AWP ATHERIS", WELL_WORN, SNIPER_RIFLE, N, 150.60, 0.02, null);
+		Skin skin1 = new Skin(null, "Ak 47 grade de Safari", BATTLE_SCARRED, ASSAUT_RIFFLE, S, 10.60, 0.01);
+		Skin skin2 = new Skin(null, "AWP ATHERIS", WELL_WORN, SNIPER_RIFLE, N, 150.60, 0.02);
 		
 		skinRepository.saveAll(Arrays.asList(skin1,skin2));
 		

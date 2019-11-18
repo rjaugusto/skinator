@@ -1,12 +1,17 @@
 package com.rafael.skinator.skin.domain;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 public class Skin implements Serializable {
@@ -22,13 +27,12 @@ public class Skin implements Serializable {
 	private StatTrack statTrack;
 	private Double price;
 	private Double exteriorfloat;
-	private Set<Stiker> stikers;
+	//private Set<Stiker> stikers = new HashSet<>();	
 	
-	public Skin() {
-	}
+	public Skin() {}
 
 	public Skin(Integer id, String name, Exterior exterior, Type tipo, StatTrack statTrack, Double price,
-			Double exteriorfloat,Set<Stiker> stikers) {
+			Double exteriorfloat) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -37,7 +41,6 @@ public class Skin implements Serializable {
 		this.statTrack = statTrack;
 		this.price = price;
 		this.exteriorfloat = exteriorfloat;
-		this.stikers = stikers;
 	}
 
 	public Integer getId() {
@@ -95,38 +98,7 @@ public class Skin implements Serializable {
 	public void setExteriorfloat(Double exteriorfloat) {
 		this.exteriorfloat = exteriorfloat;
 	}
+
 	
-	public Set<Stiker> getStikers() {
-		return stikers;
-	}
-
-	public void setStikers(Set<Stiker> stikers) {
-		this.stikers = stikers;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Skin other = (Skin) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
-
+	
 }
