@@ -3,9 +3,6 @@ package com.rafael.skinator.skin.resources.exception;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-import lombok.EqualsAndHashCode;
-
-@EqualsAndHashCode(of="id")
 public class StandardError implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -43,9 +40,5 @@ public class StandardError implements Serializable{
 	public void setInstante(LocalDateTime instante) {
 		this.instante = instante;
 	}
-	
-	
-	
-	
  
 }

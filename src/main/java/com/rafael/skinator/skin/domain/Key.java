@@ -1,17 +1,11 @@
 package com.rafael.skinator.skin.domain;
 
 import java.io.Serializable;
-import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
-@EqualsAndHashCode
 //@Entity
 public class Key implements Serializable {
 
@@ -34,4 +28,35 @@ public class Key implements Serializable {
 		this.box = box;
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Double getValor() {
+		return valor;
+	}
+
+	public void setValor(Double valor) {
+		this.valor = valor;
+	}
+
+	public Case getBox() {
+		return box;
+	}
+
+	public void setBox(Case box) {
+		this.box = box;
+	}
 }

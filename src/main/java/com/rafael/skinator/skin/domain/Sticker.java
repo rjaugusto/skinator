@@ -24,8 +24,8 @@ public class Sticker implements Serializable {
 	private String name;
 	private Double valor;
 	
-	@ManyToOne(fetch = FetchType.EAGER, targetEntity = Skin.class)
-	@JoinColumn(name="skin_id", insertable = true, updatable = true)
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="skin_id")
 	@JsonBackReference
 	private Skin skin;
 	

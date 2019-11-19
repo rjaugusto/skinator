@@ -20,27 +20,28 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Skin implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
 	private Double price;
-	
+
 	@OneToMany(mappedBy = "skin", orphanRemoval = true, fetch = FetchType.LAZY)
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@Fetch(FetchMode.SUBSELECT)
 	@JsonManagedReference
-	private Set<Sticker> stikers = new HashSet<Sticker>();	
-	
+	private Set<Sticker> stikers = new HashSet<Sticker>();
+
 	/*
 	 * private Exterior exterior; private Type tipo; private StatTrack statTrack;
 	 */
-	
+
 	/* private Double exteriorfloat; */
-	public Skin() {}
+	public Skin() {
+	}
 
 	public Skin(Integer id, String name, Double price) {
 		super();
@@ -105,6 +106,5 @@ public class Skin implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
+
 }
