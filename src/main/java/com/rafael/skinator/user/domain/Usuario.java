@@ -10,7 +10,7 @@ import javax.persistence.Id;
 
 import com.rafael.skinator.skin.domain.Skin;
 
-@Entity
+//@Entity
 public class Usuario implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

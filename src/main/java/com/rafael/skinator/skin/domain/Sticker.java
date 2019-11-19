@@ -1,28 +1,42 @@
 package com.rafael.skinator.skin.domain;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
+import java.io.Serializable;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
-public class Stiker {
+public class Sticker implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = IDENTITY)
 	private Integer id;
 	private String name;
 	private Double valor;
 	
-	public Stiker() {}
+	@ManyToOne(fetch = FetchType.EAGER, targetEntity = Skin.class)
+	@JoinColumn(name="skin_id", insertable = true, updatable = true)
+	@JsonBackReference
+	private Skin skin;
+	
+	public Sticker() {}
 
-	public Stiker(Integer id, String name, Double valor) {
+	public Sticker(Integer id, String name, Double valor, Skin skin) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.valor = valor;
+		this.skin = skin;
 	}
 
 	public Integer getId() {
@@ -48,6 +62,14 @@ public class Stiker {
 	public void setValor(Double valor) {
 		this.valor = valor;
 	}
+	
+	public Skin getSkin() {
+		return skin;
+	}
+
+	public void setSkin(Skin skin) {
+		this.skin = skin;
+	}
 
 	@Override
 	public int hashCode() {
@@ -65,7 +87,7 @@ public class Stiker {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Stiker other = (Stiker) obj;
+		Sticker other = (Sticker) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

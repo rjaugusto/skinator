@@ -2,9 +2,8 @@ package com.rafael.skinator.skin.resources.exception;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 
 @EqualsAndHashCode(of="id")
 public class StandardError implements Serializable{
